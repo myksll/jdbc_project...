@@ -203,7 +203,7 @@ group by city
 having count(*)>10
 ORDER BY COUNT(*) DESC ;
 
-------------------------------------------
+--------------------------------------------------
 --TASK 3-3
 -- From the employees, departments, and locations tables,
 -- find full name (first and last name), and salary of those employees
