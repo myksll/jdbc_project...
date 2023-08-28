@@ -1,0 +1,59 @@
+select * from customer;
+
+select * from address;
+
+SELECT FIRST_NAME, LAST_NAME, ADDRESS, PHONE
+FROM CUSTOMER JOIN ADDRESS
+ON CUSTOMER.ADDRESS_ID = ADDRESS.ADDRESS_ID;
+
+--Question: What if I want to see customer table address_id information too
+
+SELECT FIRST_NAME, LAST_NAME,ADDRESS.ADDRESS_ID, CUSTOMER.ADDRESS_ID ,ADDRESS, PHONE
+FROM CUSTOMER JOIN ADDRESS
+ON CUSTOMER.ADDRESS_ID = ADDRESS.ADDRESS_ID;
+
+--Table Aliases
+--CUSTOMER  --C
+--Employees --E
+--ADDRESS --A
+
+SELECT FIRST_NAME, LAST_NAME,A.ADDRESS_ID, C.ADDRESS_ID ,ADDRESS, PHONE
+FROM CUSTOMER C JOIN ADDRESS A
+ON C.ADDRESS_ID = A.ADDRESS_ID;
+
+--INNER JOIN and JOIN is the same logic
+SELECT FIRST_NAME, LAST_NAME,A.ADDRESS_ID, C.ADDRESS_ID ,ADDRESS, PHONE
+FROM CUSTOMER C INNER JOIN ADDRESS A
+ON C.ADDRESS_ID = A.ADDRESS_ID;
+
+/*
+    lEFT OUTER JOIN / left join
+    --it will give matching part between two tables + unique for LEFT table
+    --the order of the table is important
+ */
+SELECT FIRST_NAME, LAST_NAME,A.ADDRESS_ID, C.ADDRESS_ID ,ADDRESS, PHONE
+FROM CUSTOMER C LEFT OUTER JOIN ADDRESS A
+ON C.ADDRESS_ID = A.ADDRESS_ID;
+
+
+/*
+     RIGHT OUTER JOIN / left join
+    --it will give matching part between two tables + unique for RIGHT table
+    --the order of the table is important
+ */
+SELECT FIRST_NAME, LAST_NAME,A.ADDRESS_ID, C.ADDRESS_ID ,ADDRESS, PHONE
+FROM CUSTOMER C RIGHT OUTER JOIN ADDRESS A
+ON C.ADDRESS_ID = A.ADDRESS_ID;
+
+
+/*
+     FULL OUTER JOIN / left join
+    --it will give ALL part between two tables for RIGHT AND LEFT table
+    --the order of the table is important
+ */
+SELECT FIRST_NAME, LAST_NAME,A.ADDRESS_ID, C.ADDRESS_ID ,ADDRESS, PHONE
+FROM CUSTOMER C FULL OUTER JOIN ADDRESS A
+ON C.ADDRESS_ID = A.ADDRESS_ID;
+
+
+
